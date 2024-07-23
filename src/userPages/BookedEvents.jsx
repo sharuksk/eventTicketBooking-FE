@@ -152,20 +152,26 @@ const BookedEvents = () => {
       <Grid container spacing={2} sx={{ py: 3, mt: 6 }}>
         {eventsToDisplay.length > 0 ? (
           eventsToDisplay.map((event, index) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              key={index}
-              sx={{
-                py: 3,
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <EventCard {...event} />
-            </Grid>
+            // <Typography sx={{col}}>
+            //   {event.id}
+            // </Typography>
+            <>
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                key={index}
+                sx={{
+                  py: 3,
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Link to={"../event-summary/" + event.groupId}>Book</Link>
+                <EventCard {...event} />
+              </Grid>
+            </>
           ))
         ) : (
           <Grid item xs={12}>

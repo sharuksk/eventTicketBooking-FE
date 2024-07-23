@@ -22,6 +22,8 @@ import { PrivateRoute } from "./components/PrivateRoute";
 import { UserPrivateRoute } from "./userComponents/UserPrivateRoute";
 import Layout from "./commonLayout/Layout";
 import UserRegisterPage from "./userPages/UserRegisterPage";
+import EventSammary from "./userPages/EventSummary";
+import TicketPurchase from "./userPages/TicketPurchase";
 
 const theme = createTheme({
   palette: {
@@ -59,6 +61,14 @@ function App() {
               <Route
                 path="event-details/:bookedId"
                 element={<EventDetails />}
+              />
+              <Route
+                path="event-summary/:bookedId"
+                element={<EventSammary />}
+              />
+              <Route
+                path="event-ticket-purchase/:bookedId"
+                element={<TicketPurchase />}
               />
               <Route path="profile" element={<UserProfile />} />
             </Route>
